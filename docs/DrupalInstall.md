@@ -117,7 +117,7 @@ Installing drupal-composer/drupal-project (8.x-dev 4229acea4bb6181f421e8dd0e72a0
 
 ### Optional: Drush Installation
 
-Drush (**Dru**pal **Sh**ell) ist ein Konsolen-Anwendung, die die Bedienung von Drupal erleichtert. Die Installation geschieht durch Composer im Drupal Root-Verzeichnis:
+Drush (**Dru**pal **Sh**ell) ist eine Konsolen-Anwendung, die die Bedienung von Drupal erleichtert. Die Installation geschieht durch Composer im Drupal Root-Verzeichnis:
 
 ```console
 $ composer require drush/drush
@@ -172,4 +172,4 @@ Drush kann die Einrichtung selbstständig vornehmen: `drush site:install <profil
 
 > **Hinweis**
 > <br/>
-> Wer SQLite benutzen möchte muss an den Befehl noch (z.B.) `--db-url="sqlite://$DRUPAL_ROOT/mein_datenbank.sqlite"` anhängen
+> Wer SQLite benutzen möchte muss an den Befehl noch (z.B.) `--db-url="sqlite://$DRUPAL_ROOT/meine_datenbank.sqlite"` anhängen
