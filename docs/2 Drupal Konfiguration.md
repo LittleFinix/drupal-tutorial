@@ -36,19 +36,24 @@ Die meisten Funktionen von Drupal werden durch Module bereitgestellt. Die von Dr
 
 Welche Module vorinstalliert sind hängt von dem bei der Installation ausgewählten Profil ab.
 
-### Beispiel anhand von Admin Toolbar
+### Beispiel anhand von Admin Toolbar und Pathauto
 
-Wir Installieren das Modul [Admin Toolbar](https://www.drupal.org/project/admin_toolbar/releases/8.x-1.26), welches Drop-Down Funktionalität zur Admin-Toolbar hinzufügt.
+Wir Installieren das Modul [Admin Toolbar](https://www.drupal.org/project/admin_toolbar/releases/8.x-1.26), welches Drop-Down Funktionalität zur Admin-Toolbar hinzufügt und [Pathauto](https://www.drupal.org/project/pathauto/releases/8.x-1.3), welches automatisch benutzerfreundliche Links für erstellten Inhalt anlegt.
 
-* Wähle entweder das `tar.gz` oder das `zip` Archiv und entpacke das Archiv nach `modules`.
+* Pathauto braucht zusätzlich die Module [Chaos Tools](https://www.drupal.org/project/ctools/releases/8.x-3.2) und [Tokens](https://www.drupal.org/project/token/releases/8.x-1.5).
+* Für jedes Module: Wähle entweder das `tar.gz` oder das `zip` Archiv und entpacke es nach `modules`.
 
-  ![Modules](../bilder/modules.jpg)
+  <!-- ![Modules](../bilder/modules.jpg) -->
 
 * In der Admin-Toolbar, klicke auf `Erweitern`.
 * Mit der Suchleiste, suche nach `Admin Toolbar`, oder suche das Modul aus der Liste raus.
-* Setze einen Haken bei `Admin Toolbar`, bei `Admin Toolbar Extra Tools` und bei `Admin Toolbar Links Access Filter` und klicke auf `Installieren`.
+* Setze einen Haken bei `Admin Toolbar`, bei `Admin Toolbar Extra Tools`, und bei `Admin Toolbar Links Access Filter` und klicke auf `Installieren`.
 
   ![Extend](../bilder/extend.jpg)
+
+* Mit der Suchleiste, suche nach `Pathauto`, oder suche das Modul aus der Liste raus.
+* Setze einen Haken bei `Pathauto` und klicke auf `Installieren`.
+  * Die Module `Chaos Tools` und `Tokens` werden durch `Pathauto` automatisch installiert.
 
 Das System weist ggf. auf Module hin, die mit Installiert werden müssen. In dem Fall klicke auf OK und warte auf den Abschluss der Installation.
 
@@ -64,12 +69,23 @@ Es gibt zwei Arten von Themes: 'Normale' Themes und Admin Themes. Ein normales T
 
 Wir installieren zwei Themes: [Nexus](https://www.drupal.org/project/nexus/releases/8.x-1.4) und das Admin Theme [Adminimal](https://www.drupal.org/project/adminimal_theme/releases/8.x-1.4).
 
-* Für beide Themes: Wähle entweder das `tar.gz` oder das `zip` Archiv und entpacke das Archiv nach `themes`.
-
-  ![Modules](../bilder/modules.jpg)
-
+* Für beide Themes: Wähle entweder das `tar.gz` oder das `zip` Archiv und entpacke es nach `themes`.
 * In der Admin-Toolbar, klicke auf `Design`.
 * Unter `Nicht-Installierte Themes`, klicke `Installieren und als Vorgabe verwenden` bei `Nexus` und `Installieren` bei `Adminimal`.
 * Unten, unter Verwaltungstheme, wähle `Adminimal` aus und klicke auf `Konfiguration speichern`.
 
 Die Änderungen sollten sofort sichtbar sein.
+
+## Konfigurieren der Pfade von Pathauto
+
+Pathauto erstellt URL Aliase anhand von Information über den Inhalt, sobalt dieser das erste mal Abgespeichert wird. Z.B. kann Pathauto die URL `/artikel/2019-3-8/mein-erster-artikel` für einen Artikel namens `Mein erster Artikel`, erstellt am `8.3.2019` anlegen.
+
+Pathauto erstellt diese URLs anhand von Mustern, die unter [`Konfiguration > Suche und Metadaten > URL-Aliase > Patterns`](http://localhost:8000/admin/config/search/path/patterns) gefunden werden können.
+
+Drücke auf `Add Pathauto pattern` um ein neues Muster anzulegen. Als `Pattern type` wähle `Content` und für `Beschriftung` schreibe `Artikel-Muster`.
+
+Wähle den Inhaltstyp `Artikel` aus und als `Path pattern` gebe `artikel/[node:date-created:html_date]/[node:title]` ein.
+
+> **Hinweis**
+> <br/>
+> Unter der eingabe als `Browse available tokens.` findet man alle zur Verfügung stehende Tokens.
