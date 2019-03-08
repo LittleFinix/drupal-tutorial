@@ -75,17 +75,3 @@ Wir installieren zwei Themes: [Nexus](https://www.drupal.org/project/nexus/relea
 * Unten, unter Verwaltungstheme, wähle `Adminimal` aus und klicke auf `Konfiguration speichern`.
 
 Die Änderungen sollten sofort sichtbar sein.
-
-## Konfigurieren der Pfade von Pathauto
-
-Pathauto erstellt URL Aliase anhand von Information über den Inhalt, sobalt dieser das erste mal Abgespeichert wird. Z.B. kann Pathauto die URL `/artikel/2019-3-8/mein-erster-artikel` für einen Artikel namens `Mein erster Artikel`, erstellt am `8.3.2019` anlegen.
-
-Pathauto erstellt diese URLs anhand von Mustern, die unter [`Konfiguration > Suche und Metadaten > URL-Aliase > Patterns`](http://localhost:8000/admin/config/search/path/patterns) gefunden werden können.
-
-Drücke auf `Add Pathauto pattern` um ein neues Muster anzulegen. Als `Pattern type` wähle `Content` und für `Beschriftung` schreibe `Artikel-Muster`.
-
-Wähle den Inhaltstyp `Artikel` aus und als `Path pattern` gebe `artikel/[node:date-created:html_date]/[node:title]` ein.
-
-> **Hinweis**
-> <br/>
-> Unter der eingabe als `Browse available tokens.` findet man alle zur Verfügung stehende Tokens.
