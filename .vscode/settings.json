@@ -1,0 +1,23 @@
+{
+    "languageTool.language": "de-DE-x-simple-language",
+    "languageTool.enabled": false,
+    "cSpell.language": ",de",
+    "cSpell.words": [
+        "Chocolatey",
+        "Composer",
+        "Daemon",
+        "Docker",
+        "Dockers",
+        "Drupal",
+        "Platform",
+        "ROOT",
+        "choco",
+        "console",
+        "drush",
+        "modules",
+        "site",
+        "sites",
+        "themes",
+        "vendors"
+    ]
+}
