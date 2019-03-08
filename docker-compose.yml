@@ -1,0 +1,16 @@
+version: "3"
+services:
+  db:
+    image: mariadb
+    environment: 
+      MYSQL_ROOT_PASSWORD: 'passwort'
+      MYSQL_DATABASE: 'drupal'
+
+  web:
+    image: drupal
+    links:
+      - db:datenbank
+    volumes:
+      - "~/Downloads/drupal-8.6.10:/var/www/html"
+    ports:
+      - "8000:80"
